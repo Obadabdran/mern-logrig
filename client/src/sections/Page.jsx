@@ -12,7 +12,7 @@ const Page = () => {
     window.localStorage.removeItem('UserId')
     window.location.reload(false)
       
-    
+    navigate(-2)
   }
   
   
