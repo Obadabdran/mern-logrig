@@ -13,7 +13,7 @@ const navigate=useNavigate()
 
 const handlsubmit=async(e)=>{
  e.preventDefault() 
- const response=await Axios.post('http://localhost:5000/register',{
+ const response=await Axios.post('https://mern-logrig-service.onrender.com/register',{
   username,password,email
  })
  alert(response.data.message)
@@ -25,7 +25,7 @@ const handlsubmit=async(e)=>{
 
 const handlelogin=async(e)=>{
   e.preventDefault() 
-  const response=await Axios.post('http://localhost:5000/login',{username,password})
+  const response=await Axios.post('https://mern-logrig-service.onrender.com/login',{username,password})
   setCookies('user_token',response.data.token)
   window.localStorage.setItem('UserId',response.data.id)
   window.location.reload
@@ -33,7 +33,7 @@ const handlelogin=async(e)=>{
     if(response.data.role==='Admin'){
       navigate('/admin')
     }else{
-      navigate('./page')
+      navigate('/login/page')
     }
   }
   
